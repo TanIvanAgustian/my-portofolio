@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-32 relative" ref={ref}>
+    <section id="projects" className="py-32 relativ px-20" ref={ref}>
       <div className="section-container">
         <motion.div
           className="text-center mb-16"
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">A selection of projects I've built for clients and personal exploration</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -64,11 +64,11 @@ const ProjectsSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background/90 to-transparent" />
               </div>
