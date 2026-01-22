@@ -1,0 +1,105 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+const skills = [
+  { name: "React", level: 95 },
+  { name: "TypeScript", level: 90 },
+  { name: "Node.js", level: 85 },
+  { name: "Next.js", level: 88 },
+  { name: "Tailwind CSS", level: 95 },
+  { name: "PostgreSQL", level: 80 },
+  { name: "Figma", level: 85 },
+  { name: "AWS", level: 75 },
+];
+
+const technologies = [
+  "React",
+  "TypeScript",
+  "Next.js",
+  "Node.js",
+  "Python",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "AWS",
+  "Tailwind CSS",
+  "Figma",
+  "Git",
+  "GraphQL",
+  "REST APIs",
+  "Prisma",
+];
+
+const SkillsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="skills" className="py-32 relative bg-secondary/30" ref={ref}>
+      <div className="section-container">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-primary font-medium mb-4 block">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Technologies I <span className="gradient-text">work with</span>
+          </h2>
+        </motion.div>
+
+        {/* Skills bars */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+            >
+              <div className="flex justify-between mb-2">
+                <span className="font-medium">{skill.name}</span>
+                <span className="text-muted-foreground">{skill.level}%</span>
+              </div>
+              <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-linear-to-r from-primary to-primary/70 rounded-full"
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: `${skill.level}%` } : {}}
+                  transition={{ duration: 1, delay: 0.3 + index * 0.05 }}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Technology tags */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-3"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          {technologies.map((tech, index) => (
+            <motion.span
+              key={tech}
+              className="px-4 py-2 bg-secondary border border-border rounded-full text-sm font-medium hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-default"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.5 + index * 0.03 }}
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default SkillsSection;
