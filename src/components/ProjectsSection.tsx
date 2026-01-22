@@ -3,41 +3,35 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with payment integration, inventory management, and real-time analytics.",
-    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&auto=format&fit=crop&q=60",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "CRM Dashboard",
+    description:
+      "An internal CRM dashboard that helps staff manage daily tasks, track customer data, and organize work activities through a centralized and easy-to-use interface.",
+    image: "/ICW.jpeg",
+    tags: ["React + Vite", "PostgreSQL", "Material UI", "ApexChart", "Formik + Yup"],
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates, drag-and-drop interface, and team chat.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&auto=format&fit=crop&q=60",
-    tags: ["React", "Socket.io", "Node.js", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Clearing Dashboard",
+    description:
+      "A web-based clearing dashboard designed to monitor, reconcile, and manage transaction data efficiently, providing clear insights through structured data views and reports.",
+    image: "/IGC.jpg",
+    tags: ["Next.js", "PostgreSQL", "Shadcn UI", "Tanstack", "Nuqs"],
   },
   {
-    title: "AI Content Generator",
-    description: "AI-powered platform that generates marketing content, blog posts, and social media copy.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60",
-    tags: ["Python", "OpenAI", "React", "FastAPI"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "POS System",
+    description:
+      "A self-order point-of-sale system for restaurants that allows customers to place orders directly from their table while enabling owners to monitor sales, orders, and inventory in real time.",
+    image: "/TapBro.jpeg",
+    tags: ["Next.js", "PostgreSQL", "Shadcn UI", "Tanstack", "Firebase"],
   },
   {
-    title: "Finance Dashboard",
-    description: "Personal finance tracker with budget planning, expense analytics, and investment portfolio monitoring.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
-    tags: ["React", "D3.js", "Node.js", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Crypto Payment Gateway",
+    description:
+      "A web application used to monitor and track cryptocurrency payment transactions, providing transaction status, history, and basic analytics for payment operations.",
+    image: "/Asasta.jpg",
+    tags: ["Next.js", "MySql", "Shadcn UI", "Tanstack", "Zustand", "jose"],
   },
 ];
 
@@ -88,7 +82,7 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                   <Button size="sm" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
@@ -101,7 +95,7 @@ const ProjectsSection = () => {
                       Code
                     </a>
                   </Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
