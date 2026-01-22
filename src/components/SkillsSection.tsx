@@ -6,32 +6,66 @@ import { useRef } from "react";
 
 const skills = [
   { name: "React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "Next.js", level: 88 },
+  { name: "TypeScript", level: 92 },
+  { name: "Next.js", level: 90 },
   { name: "Tailwind CSS", level: 95 },
-  { name: "PostgreSQL", level: 80 },
-  { name: "Figma", level: 85 },
-  { name: "AWS", level: 75 },
+  { name: "UI/UX Implementation", level: 90 },
+  { name: "State Management (TanStack Query / Zustand)", level: 88 },
+  { name: "REST API Integration", level: 85 },
+  { name: "Git & Collaboration Workflow", level: 85 },
 ];
 
 const technologies = [
-  "React",
+  // Frontend Core
+  "HTML5",
+  "CSS3",
+  "JavaScript (ES6+)",
   "TypeScript",
+  "React",
   "Next.js",
-  "Node.js",
-  "Python",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Docker",
-  "AWS",
+  "Vite",
+
+  // Styling & UI
   "Tailwind CSS",
-  "Figma",
-  "Git",
-  "GraphQL",
+  "CSS Modules",
+  "Material UI",
+  "Radix UI",
+  "Shadcn/UI",
+
+  // State & Data
+  "TanStack Query",
+  "Zustand",
+
+  // Backend & API
+  "Express.js",
   "REST APIs",
-  "Prisma",
+  "GraphQL",
+
+  // Database & ORM
+  "MySql",
+  "PostgreSQL",
+
+  // Auth & Security
+  "JWT Authentication",
+  "Cookies",
+
+  // DevOps & Tools
+  "Docker",
+  "Vercel",
+  "Git",
+  "GitHub Actions",
+
+  // Testing & Quality
+  "ESLint",
+  "Prettier",
+
+  // Design & Collaboration
+  "Figma",
+  "Responsive Design",
+  "UI/UX Implementation",
+
+  // Others
+  "Agile / Scrum",
 ];
 
 const SkillsSection = () => {
