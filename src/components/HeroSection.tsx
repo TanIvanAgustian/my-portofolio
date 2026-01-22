@@ -53,11 +53,17 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button size="lg" className="px-8 glow-effect">
+          <Button size="lg" className="px-8 glow-effect" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
             View My Work
           </Button>
-          <Button size="lg" variant="outline" className="px-8">
-            Get In Touch
+          <Button size="lg" variant="outline" className="px-8" asChild>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=tanivanagustian@gmail.com&su=Frontend%20Opportunity"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get In Touch
+            </a>
           </Button>
         </motion.div>
 
