@@ -1,21 +1,21 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Heart, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="py-12 border-t border-border px-8">
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2 text-muted-foreground">
             <span>Made with</span>
             <Heart className="w-4 h-4 text-primary fill-primary" />
-            <span>by John Doe</span>
+            <span>by Tan, Ivan Agustian</span>
           </div>
 
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/TanIvanAgustian"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
@@ -23,7 +23,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/tan-ivan-agustian-33b742232/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
@@ -31,12 +31,12 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.instagram.com/tan_ivanagustian/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
             >
-              <Twitter className="w-5 h-5" />
+              <Instagram className="w-5 h-5" />
             </a>
           </div>
 
