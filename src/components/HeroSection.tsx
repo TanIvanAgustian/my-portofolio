@@ -25,16 +25,29 @@ const HeroSection = () => {
 
       <div className="section-container relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-          {/* LEFT – IMAGE */}
+          {/* LEFT – IMAGE (Modern Style) */}
           <motion.div
-            className="flex justify-center lg:justify-start"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="relative flex justify-center lg:justify-start"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-72 h-96 md:w-80 md:h-112 rounded-2xl overflow-hidden border border-primary/20 shadow-xl">
-              <Image src="/Photo.jpeg" alt="Tan Ivan Agustian" fill className="object-cover" priority />
-            </div>
+            {/* Glow background */}
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-primary/30 via-primary/10 to-transparent blur-3xl opacity-70" />
+
+            {/* Floating card */}
+            <motion.div
+              className="relative w-72 h-96 md:w-80 md:h-[30rem]"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-background/60 backdrop-blur border border-primary/20 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.5)]">
+                <Image src="/Photo.jpeg" alt="Tan Ivan Agustian" fill className="object-cover" priority />
+
+                {/* subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* RIGHT – TEXT */}

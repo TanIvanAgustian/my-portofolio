@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
           <a href="#" className="text-xl font-bold">
-            <span className="gradient-text">JD</span>
+            <span className="gradient-text"></span>
           </a>
 
           {/* Desktop Navigation */}
