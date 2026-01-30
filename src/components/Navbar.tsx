@@ -46,7 +46,15 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button size="sm">Hire Me</Button>
+            <Button size="sm">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=tanivanagustian@gmail.com&su=Frontend%20Developer%20Opportunity&body=Hello%20Ivan,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20Frontend%20Developer%20opportunity%20with%20you.%0D%0A%0D%0ACompany:%0D%0APosition:%0D%0AContact:%0D%0A%0D%0ABest%20regards,"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hire Me
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,7 +66,14 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden py-6 border-t border-border/50"
+            className="
+      md:hidden
+      py-6 px-3
+      border-t border-border/50
+      bg-background/90
+      backdrop-blur-lg
+      shadow-lg
+    "
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
@@ -74,7 +89,15 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="mt-4">Hire Me</Button>
+              <Button className="mt-4" asChild>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=tanivanagustian@gmail.com&su=Frontend%20Developer%20Opportunity&body=Hello%20Ivan,%0D%0A%0D%0AI%20am%20interested%20in%20discussing%20a%20Frontend%20Developer%20opportunity%20with%20you.%0D%0A%0D%0ACompany:%0D%0APosition:%0D%0AContact:%0D%0A%0D%0ABest%20regards,"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hire Me
+                </a>
+              </Button>
             </div>
           </motion.div>
         )}

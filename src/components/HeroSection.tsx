@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden md:py-0 py-16">
       {/* Background gradient */}
       <div className="absolute inset-0 hero-gradient" />
 
@@ -33,11 +33,11 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Glow background */}
-            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-primary/30 via-primary/10 to-transparent blur-3xl opacity-70" />
+            <div className="absolute -inset-4 rounded-[2rem] bg-linear-to-t from-primary/30 via-primary/10 to-transparent blur-3xl opacity-70" />
 
             {/* Floating card */}
             <motion.div
-              className="relative w-72 h-96 md:w-80 md:h-[30rem]"
+              className="relative w-72 h-96 md:w-80 md:h-120"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -45,7 +45,7 @@ const HeroSection = () => {
                 <Image src="/Photo.jpeg" alt="Tan Ivan Agustian" fill className="object-cover" priority />
 
                 {/* subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
               </div>
             </motion.div>
           </motion.div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
             </motion.span>
 
             <motion.h1
-              className="text-4xl md:text-6xl xl:text-7xl font-bold mb-6 tracking-tight"
+              className="text-2xl md:text-6xl xl:text-7xl font-bold mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -70,7 +70,7 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-muted-foreground mb-10"
+              className="text-base md:text-xl text-muted-foreground mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -138,7 +138,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2" animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+      <motion.div
+        className="md:block hidden absolute bottom-10 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </motion.div>
     </section>

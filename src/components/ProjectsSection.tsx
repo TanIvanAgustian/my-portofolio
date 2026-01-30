@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-32 relativ px-20" ref={ref}>
+    <section id="projects" className="py-32 relativ md:px-20 px-4" ref={ref}>
       <div className="section-container">
         <motion.div
           className="text-center mb-16"
@@ -48,11 +48,13 @@ const ProjectsSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-primary font-medium mb-4 block">Projects</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <span className="text-primary font-medium mb-4 block md:text-base text-xs">Projects</span>
+          <h2 className="text-2xl md:text-5xl font-bold mb-2">
             Featured <span className="gradient-text">Work</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">A selection of projects I've built for clients and personal exploration</p>
+          <p className="text-muted-foreground md:text-lg text-sm max-w-2xl mx-auto">
+            A selection of projects I've built for clients and personal exploration
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -72,9 +74,9 @@ const ProjectsSection = () => {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background/90 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+              <div className="md:p-6 p-3">
+                <h3 className="md:text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4 md:text-base text-sm">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span key={tag} className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
@@ -82,20 +84,6 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                {/* <div className="flex gap-3">
-                  <Button size="sm" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                </div> */}
               </div>
             </motion.div>
           ))}
